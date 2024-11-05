@@ -1,50 +1,6 @@
 @hookinsert('layout.header.top')
 
 <header id="appHeader">
-  <div class="header-top">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="language-switch d-flex align-items-center">
-        @if (locales()->count() > 1)
-          <div class="dropdown">
-            <a class="btn dropdown-toggle" href="javascript:void(0)">
-              <img src="{{ asset($current_locale->image) }}" class="img-fluid"> {{ $current_locale->name }}
-            </a>
-
-            <div class="dropdown-menu">
-              @foreach (locales() as $locale)
-                <a class="dropdown-item d-flex" href="{{ front_route('locales.switch', ['code' => $locale->code]) }}">
-                  <div class="wh-20 me-2"><img src="{{ image_origin($locale['image']) }}" class="img-fluid border"></div>
-                  {{ $locale->name }}
-                </a>
-              @endforeach
-            </div>
-          </div>
-        @endif
-
-        @if (currencies()->count() > 1)
-          <div class="dropdown ms-4">
-            <a class="btn dropdown-toggle" href="javascript:void(0)">
-              {{ current_currency()->name }}
-            </a>
-
-            <div class="dropdown-menu">
-              @foreach (currencies() as $currency)
-                <a class="dropdown-item" href="{{ front_route('currencies.switch', ['code'=> $currency->code]) }}">
-                  {{ $currency->name }} ({{ $currency->symbol_left }})
-                </a>
-              @endforeach
-            </div>
-          </div>
-        @endif
-      </div>
-      <div class="top-info">
-        <a href="{{ front_route('articles.index') }}">News</a>
-        @hookupdate('layouts.header.telephone')
-        <span><i class="bi bi-telephone-outbound"></i> {{ system_setting('telephone') }}</span>
-        @endhookupdate
-      </div>
-    </div>
-  </div>
   <div class="header-desktop">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="left">
@@ -59,7 +15,6 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{{ front_route('home.index') }}">{{ __('front/common.home') }}</a>
               </li>
-
               @hookupdate('layouts.header.menu.pc')
                 @foreach($header_menus as $menu)
                   @if($menu['children'] ?? [])
