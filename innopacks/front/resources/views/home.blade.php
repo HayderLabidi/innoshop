@@ -18,8 +18,8 @@
             @foreach (system_setting('slideshow', []) as $slide)
               @if ($slide['image'][front_locale_code()] ?? false)
                 <div class="swiper-slide">
-                  <a href="{{ $slide['link'] ?: 'javascript:void(0)' }}"><img
-                        src="{{ image_origin($slide['image'][front_locale_code()]) }}" class="img-fluid"></a>
+                  <img
+                        src="{{ image_origin($slide['image'][front_locale_code()]) }}" class="img-fluid">
                 </div>
               @endif
             @endforeach
