@@ -27,23 +27,23 @@ $weightClasses = [
         <div class="card-body">
           <div class="accordion accordion-flush locales-accordion mb-3" id="data-locales">
             @foreach (locales() as $locale)
-            @php($localeCode = $locale->code)
-            @php($localeName = $locale->name)
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#data-locale-{{ $localeCode }}"
-                  aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="data-locale-{{ $localeCode }}">
-                  <div class="wh-20 me-2">
-                    <img src="{{ image_origin($locale->image) }}" class="img-fluid">
-                  </div>
-                  {{ $localeName }}
-                </button>
-              </h2>
-              <div id="data-locale-{{ $localeCode }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
-                data-bs-parent="#data-locales">
-                <div class="accordion-body" data-locale-code="{{ $localeCode }}" data-locale-name="{{ $localeName }}">
-                  <input type="hidden" name="translations[{{$localeCode}}][locale]" value="{{ $localeCode }}">
+  @if ($loop->first) <!-- This condition limits to only the first item -->
+    @php($localeCode = $locale->code)
+    @php($localeName = $locale->name)
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#data-locale-{{ $localeCode }}" aria-expanded="true" aria-controls="data-locale-{{ $localeCode }}">
+          <div class="wh-20 me-2">
+            <img src="{{ image_origin($locale->image) }}" class="img-fluid">
+          </div>
+          {{ $localeName }}
+        </button>
+      </h2>
+      <div id="data-locale-{{ $localeCode }}" class="accordion-collapse collapse show"
+        data-bs-parent="#data-locales">
+        <div class="accordion-body" data-locale-code="{{ $localeCode }}" data-locale-name="{{ $localeName }}">
+          <input type="hidden" name="translations[{{$localeCode}}][locale]" value="{{ $localeCode }}">
                   <x-common-form-input title="{{ __('panel/product.name') }}" name="translations[{{$localeCode}}][name]"
                     value="{{ old('translations.' . $localeCode . '.name', $product->translate($localeCode, 'name')) }}"
                     required placeholder="{{ __('panel/product.name') }}" />
@@ -73,10 +73,12 @@ $weightClasses = [
                   <x-common-form-input title="{{ __('panel/common.meta_keywords') }}" name="translations[{{$localeCode}}][meta_keywords]"
                     value="{{ old('translations.' . $localeCode . '.meta_keywords', $product->translate($localeCode, 'meta_keywords')) }}"
                     placeholder="{{ __('panel/common.meta_keywords') }}" column="product_keywords" generate="true" />
-                </div>
-              </div>
-            </div>
-            @endforeach
+        </div>
+      </div>
+    </div>
+  @endif
+@endforeach
+
           </div>
 
           <x-common-form-images title="{{ __('panel/common.image') }}" name="images" :values="old('images', $product->images->pluck('path')->toArray())"/>

@@ -1,12 +1,12 @@
 @hookinsert('layout.header.top')
 
 <header id="appHeader">
-  <div class="header-desktop">
+  <div class="header-desktop" style="padding: 20px 0;">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="left">
         <h1 class="logo">
           <a href="{{ front_route('home.index') }}">
-            <img src="{{ image_origin(system_setting('front_logo', 'images/logo.svg')) }}" class="img-fluid">
+            <img src="{{ image_origin(system_setting('front_logo', 'images/logo.svg')) }}" class="img-fluid" style="margin-top: -10px">
           </a>
         </h1>
         <div class="menu">

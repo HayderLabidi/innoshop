@@ -2,7 +2,7 @@
   <div class="mb-menu d-lg-none"><i class="bi bi-list"></i></div>
   <div class="header-logo">
     <a href="{{ panel_route('home.index') }}" class="sidebar-logo">
-      <img src="{{ image_origin(system_setting('panel_logo', 'images/logo-panel.png')) }}" class="img-fluid">
+      <img src="{{ image_origin(system_setting('panel_logo', 'images/logo-panel.png')) }}" class="img-fluid" width="200">
     </a>
   </div>
   <div class="d-flex justify-content-end right-tool">
