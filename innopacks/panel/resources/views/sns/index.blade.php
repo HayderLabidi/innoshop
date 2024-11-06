@@ -5,104 +5,109 @@
 <x-panel::form.right-btns />
 
 @section('content')
-  <div class="card h-min-600">
-    <div class="card-header">
-      <h5 class="card-title mb-0">三方登录配置</h5>
-    </div>
-    <div class="card-body">
-      <form class="needs-validation" novalidate id="sns-form" action="{{ panel_route('sns.index') }}" method="POST">
-        @csrf
+<div class="card h-min-600">
+  <div class="card-header">
+    <h5 class="card-title mb-0">三方登录配置</h5>
+  </div>
+  <div class="card-body">
+    <form class="needs-validation" novalidate id="sns-form" action="{{ panel_route('sns.index') }}" method="POST">
+      @csrf
 
       <div class="container mt-1">
         <table class="table table-bordered">
-          <thead class="table-secondary">
+          <thead>
             <tr>
               <th scope="col">类型</th>
               <th scope="col">状态</th>
-              <th scope="col">Cilent Secret</th>
+              <th scope="col">Client Secret</th>
               <th scope="col">回调地址</th>
               <th scope="col">排序</th>
               <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
-            <t>
+            <tr>
               <th scope="row">
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                    id="dropdownButton">
-                    Dropdown button
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" id="sns-type-button">
+                    Facebook
                   </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" data-value="Action">Action</a></li>
-                    <li><a class="dropdown-item" data-value="Another action">Another action</a></li>
-                    <li><a class="dropdown-item" data-value="Something else here">Something else here</a></li>
+                  <ul class="dropdown-menu" id="sns-type-menu">
+                    <li><a class="dropdown-item" data-value="Facebook">Facebook</a></li>
+                    <li><a class="dropdown-item" data-value="Twitter">Twitter</a></li>
+                    <li><a class="dropdown-item" data-value="Google">Google</a></li>
                   </ul>
                 </div>
+                <input type="hidden" name="sns_type" id="sns_type" value="Facebook">
               </th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td></td>
-              <td></td>
-            </t>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>111</td> 
-              <td>@fat</td>
-              <td></td>
+              <td><input type="text" class="form-control" name="status" value="Mark"></td>
+              <td><input type="text" class="form-control" name="client_secret" value="Otto"></td>
+              <td><input type="text" class="form-control" name="callback_url" value="@mdo"></td>
+              <td><input type="number" class="form-control" name="sort_order" value="1"></td>
               <td></td>
             </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="1">Larry the Bird</td>
-              <td>11111</td>
-              <td>@twitter</td>
-              <td></td>
-              <td></td>
-            </tr>
+            <!-- 更多行... -->
           </tbody>
         </table>
       </div>
-        <button type="submit" class="d-none"></button>
-      </form>
-    </div>
+      <button type="submit" class="d-none"></button>
+    </form>
   </div>
+</div>
 @endsection
 
 @push('footer')
-    <script>
-    document.querySelectorAll('.dropdown-item').forEach(function (item) {
-    item.addEventListener('click', function (event) {
-      event.preventDefault(); // 防止默认行为（例如跳转）
-      var dropdownButton = document.getElementById('dropdownButton');
-      dropdownButton.textContent = this.getAttribute('data-value'); // 更新按钮文本
-    });
-    });
-    </script>
-@endpush
-<style>
-   
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid red;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-            text-align: left;
-        }
-    .btn-secondary{
-       background-color: #ffffff !important;
-       color: black !important;
-       border:1px solid  #dedede !important ;
+  <style>
+    .btn-secondary {
+    color: #000;
+    background-color: #f8f9fa;
+    }
 
+    .dropdown-menu {
+    background-color: #fff;
+    /* 纯白色背景 */
+    border-color: #fff;
+    /* 白色边框 */
     }
-    .table-secondary{
-         background-color: #e8edf3 !important;
+
+    .dropdown-menu .dropdown-item {
+    color: #000;
+    background-color: #fff;
+    /* 默认背景颜色为白色 */
     }
-</style>
+
+    .dropdown-menu .dropdown-item:hover,
+    .dropdown-menu .dropdown-item:focus {
+    background-color: #fff;
+    /* 悬停或聚焦时的背景颜色也为白色 */
+    }
+
+    .dropdown-menu .dropdown-item.active,
+    .dropdown-menu .dropdown-item:active {
+    background-color: #fff;
+    /* 选中时的背景颜色也为白色 */
+    color: #000;
+    /* 选中时的文字颜色为黑色 */
+    }
+  </style>
+  <script>
+    document.querySelectorAll('#sns-type-menu .dropdown-item').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      const selectedValue = this.getAttribute('data-value');
+      document.getElementById('sns_type').value = selectedValue;
+      document.getElementById('sns-type-button').innerText = selectedValue;
+
+      // 移除所有 active 类
+      document.querySelectorAll('#sns-type-menu .dropdown-item').forEach(item => {
+      item.classList.remove('active');
+      });
+
+      // 给当前选中的项添加 active 类
+      this.classList.add('active');
+    });
+    });
+    
+  </script>
+@endpush
