@@ -63,12 +63,23 @@
 @push('footer')
 <script>
   $('.cancel-favorite').on('click', function () {
-    const id = $(this).attr('data-id');
-    inno.addWishlist(id, 1, null, function () {
-      setTimeout(() => {
+    const productId = $(this).data('id');
+
+    $.ajax({
+      url: '/api/favorites/cancel',
+      type: 'POST',
+      data: {
+        _token: '{{ csrf_token() }}',
+        product_id: productId
+      },
+      success: function(response) {
         location.reload();
-      }, 800);
-    })
+      },
+      error: function(xhr) {
+        alert('Error deleting the product from favorites.');
+      }
+    });
   });
 </script>
+
 @endpush

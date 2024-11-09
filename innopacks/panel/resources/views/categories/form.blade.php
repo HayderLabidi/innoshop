@@ -83,11 +83,9 @@
         </div>
       </div>
     </div>
-
   <button type="submit" class="d-none"></button>
 </form>
 @endsection
-
 @push('footer')
 <script></script>
 @endpush
