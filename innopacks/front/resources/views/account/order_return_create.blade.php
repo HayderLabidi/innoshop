@@ -17,7 +17,6 @@
             <span class="fw-bold">{{ __('front/account.order_returns') }}</span>
           </div>
 
-          {{-- 为订单 {{ $number }} 创建售后 --}}
           <form class="needs-validation edit-form" action="{{ account_route('order_returns.store') }}" method="POST" novalidate>
             @csrf
 

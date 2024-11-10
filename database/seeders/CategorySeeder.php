@@ -143,7 +143,7 @@ class CategorySeeder extends Seeder
                 ],
             ],
             [
-                'slug'         => 'children-clothing',
+                'slug'         => 'Movies',
                 'position'     => 3,
                 'active'       => 1,
                 'translations' => [
@@ -154,8 +154,8 @@ class CategorySeeder extends Seeder
                     ],
                     [
                         'locale'  => 'en',
-                        'name'    => 'Children',
-                        'content' => 'Fashion clothing for children',
+                        'name'    => 'Movies',
+                        'content' => 'Movies to watch',
                     ],
                 ],
                 'children' => [
