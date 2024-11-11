@@ -34,21 +34,16 @@
           @endforeach
         </div>
       @else
-        @include('shared.no-data', ['text' => '没有数据 ~'])
+        @include('shared.no-data', ['text' => ''])
       @endif
     </div>
     <div class="col-12 col-md-3">
       <div class="newes-sidebar">
-        <div class="search-box">
-          <div class="input-group input-group-lg">
-            <input type="text" class="form-control" value="{{ request('keyword') }}" placeholder="请输入关键字">
-            <button class="btn btn-primary" type="button">搜索</button>
-          </div>
-        </div>
+
 
         @if(isset($catalogs) && $catalogs)
           <div class="sidebar-item">
-            <div class="sidebar-title">新闻分类</div>
+            <div class="sidebar-title">News</div>
             <div class="sidebar-list">
               <ul>
                 @foreach($catalogs as $catalog)
@@ -63,7 +58,7 @@
 
         @if(isset($tags) && $tags)
           <div class="sidebar-item">
-            <div class="sidebar-title">新闻标签</div>
+            <div class="sidebar-title">News</div>
             <div class="sidebar-list">
               <ul>
                 @foreach($tags as $tag)

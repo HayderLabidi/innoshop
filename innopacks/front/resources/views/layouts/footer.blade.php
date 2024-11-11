@@ -13,7 +13,7 @@
               </div>
               <div class="about-text footer-item-content">
                 <p>
-                  <b>{{ system_setting_locale('meta_description') }}</b>
+                  <b>Bienvenue sur eBook Library, votre destination en ligne pour découvrir, lire et partager des eBooks passionnants dans tous les genres . Que vous soyez amateur de fiction, de science, de développement personnel ou de classiques de la littérature, notre plateforme propose une vaste collection de livres numériques pour tous les goûts et tous les âges.</b>
                 </p>
               </div>
             </div>
@@ -70,7 +70,6 @@
               Powered By Hayder Labidi</a>
               <!-- Powered By InnoShop {{ innoshop_version() }} -->
               <span class="copyright-text">
-                <a href="{{ front_route('home.index') }}" class="ms-2" target="_blank">{{ config('app.name') }}</a>
                 &copy; {{ date('Y') }} All Rights Reserved
                 @if(system_setting('icp_number'))
                   <a href="https://beian.miit.gov.cn" class="ms-2" target="_blank">{{ system_setting('icp_number') }}</a>

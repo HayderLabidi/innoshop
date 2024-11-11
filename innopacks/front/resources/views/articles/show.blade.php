@@ -36,13 +36,7 @@
       </div>
       <div class="col-12 col-md-3">
         <div class="newes-sidebar">
-          <div class="search-box">
-            <div class="input-group input-group-lg">
-              <input type="text" class="form-control" value="{{ request('keyword') }}" placeholder="请输入关键字">
-              <button class="btn btn-primary" type="button">搜索</button>
-            </div>
-          </div>
-          <div class="sidebar-title">新闻分类</div>
+          <div class="sidebar-title">News</div>
           <div class="sidebar-list">
             <ul>
               @foreach($catalogs as $catalog)

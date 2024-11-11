@@ -8,27 +8,27 @@
         <div class="row">
           <div class="col-12">
             <div class="title-box">
-              <div class="title">我们的服务</div>
+              <div class="title">Our Services</div>
               <div class="sub-title">
-                我们不仅提供定制化的解决方案，还以专业的技术知识、创新的思维方式和全方位的支持，确保您能够享受到卓越而高效的服务体验。我们承诺，无论您的需求如何变化，我们都能为您提供最匹配的专业服务。
+                We not only provide customized solutions, but also ensure you enjoy an excellent and efficient service experience through our professional technical knowledge, innovative thinking, and comprehensive support. We promise that no matter how your needs change, we will provide the most suitable professional service for you.
               </div>
             </div>
           </div>
           <div class="col-12 col-md-6">
             <div class="service-item">
               <div class="icon"><i class="bi bi-house-door-fill"></i></div>
-              <div class="title">开源系统</div>
+              <div class="title">Open Source Systems</div>
               <div class="sub-title">
-                致力于提供高度灵活和可定制的解决方案。利用开放源代码的优势，我们帮助企业构建可扩展的系统，同时确保透明度和社区支持。
+                Dedicated to providing highly flexible and customizable solutions. By leveraging the advantages of open-source code, we help enterprises build scalable systems, ensuring transparency and community support.
               </div>
             </div>
           </div>
           <div class="col-12 col-md-6">
             <div class="service-item">
               <div class="icon"><i class="bi bi-house-door-fill"></i></div>
-              <div class="title">插件市场</div>
+              <div class="title">Plugin Marketplace</div>
               <div class="sub-title">
-                通过我们的插件市场，用户可以轻松扩展其系统功能。我们提供丰富的插件选择，以满足不同的业务需求，让定制化服务触手可及
+                Through our plugin marketplace, users can easily extend their system functions. We offer a rich selection of plugins to meet various business needs, making customized services easily accessible.
               </div>
             </div>
           </div>
@@ -42,27 +42,27 @@
           <div class="col-12 col-md-4">
             <div class="service-item">
               <div class="icon"><i class="bi bi-house-door-fill"></i></div>
-              <div class="title">定制开发</div>
+              <div class="title">Custom Development</div>
               <div class="sub-title">
-                专注于根据您的具体需求，打造独一无二的软件解决方案。从概念到实现，我们与您紧密合作，确保最终产品超出您的期望。
+                Focused on creating unique software solutions tailored to your specific needs. From concept to realization, we work closely with you to ensure the final product exceeds your expectations.
               </div>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="service-item">
               <div class="icon"><i class="bi bi-house-door-fill"></i></div>
-              <div class="title">安装维护</div>
+              <div class="title">Installation & Maintenance</div>
               <div class="sub-title">
-                我们的安装维护服务确保您的系统运行平稳，通过定期更新和故障排除，我们提供无忧的技术支持，让您专注于核心业务。
+                Our installation and maintenance services ensure the smooth operation of your system. Through regular updates and troubleshooting, we provide worry-free technical support, allowing you to focus on your core business.
               </div>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="service-item">
               <div class="icon"><i class="bi bi-house-door-fill"></i></div>
-              <div class="title">技术培训</div>
+              <div class="title">Technical Training</div>
               <div class="sub-title">
-                通过我们的技术培训服务，您的团队将获得必要的技能和知识。我们的培训课程旨在提升效率，促进创新，并确保长期的技术自给自足。
+                Through our technical training services, your team will gain the necessary skills and knowledge. Our training courses are designed to improve efficiency, foster innovation, and ensure long-term technical self-sufficiency.
               </div>
             </div>
           </div>

@@ -50,10 +50,10 @@ class ArticleSeeder extends Seeder
             [
                 'id'         => 1,
                 'catalog_id' => 1,
-                'slug'       => 'innoshop-innovative-open-source-ecommerce',
+                'slug'       => 'Ebook',
                 'position'   => 0,
                 'viewed'     => 16,
-                'author'     => 'InnoShop',
+                'author'     => 'Ebook',
                 'active'     => 1,
             ],
             [
@@ -62,7 +62,7 @@ class ArticleSeeder extends Seeder
                 'slug'       => null,
                 'position'   => 0,
                 'viewed'     => 16,
-                'author'     => 'InnoShop',
+                'author'     => 'Ebook',
                 'active'     => 1,
             ],
             [
@@ -80,7 +80,7 @@ class ArticleSeeder extends Seeder
                 'slug'       => null,
                 'position'   => 0,
                 'viewed'     => 16,
-                'author'     => 'InnoShop',
+                'author'     => 'Ebook',
                 'active'     => 1,
             ],
         ];

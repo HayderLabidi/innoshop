@@ -60,7 +60,6 @@ $(function () {
       column_name:$(this).data('column'),
       column_value: inputEle.val()
     };
-
     layer.load(2, {shade: [0.3,'#fff'] })
     axios.post(urls.ai_generate, formData, {}).then(function (res) {
       let message = res.data.message;
